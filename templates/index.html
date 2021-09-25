@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Prediction</title>
+  </head>
+  <body>
+    <h1>Real estate Prediction</h1>
+    <form action = "{{ url_for('predict') }}" method = "POST">
+        <input type = "text" name = "X1_transaction_date" placeholder="X1_transaction_date" required>
+        <input type = "text" name = "X2_house_age" placeholder="X2_house_age" required>
+        <input type = "text" name = "X3_distance_to_nearest_MRT_station" placeholder="X3_distance_to_nearest_MRT_station" step="any"required>
+        <input type = "text" name = "X4_number_of_convenience_stores" placeholder="X4_number_of_convenience_stores" step="any"required>
+        <input type = "text" name = "X5_latitude" placeholder="X5_latitude" step="any"required>
+        <input type = "text" name = "X6_longitude" placeholder="X6_longitude" required>
+        <button type = "submit">Predict </button>
+    </form>
+
+    {%  if estate_prediction %}
+        {{estate_prediction}}
+    {%endif%}
+
+  </body>
+</html>
